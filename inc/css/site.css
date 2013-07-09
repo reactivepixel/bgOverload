@@ -1,0 +1,45 @@
+a{
+	text-decoration: none;
+} a:hover, a:active{
+		text-decoration: underline;
+	}
+
+.item-grade-wrapper{
+	text-align: right;
+}
+.score-disp{
+	text-align: right;
+	color: #2ecc71;
+}
+
+article{
+	background: #ECF0F1;
+
+	padding: 1em;
+	margin: 1em 0;
+}
+
+#progress{
+	cursor: hand;
+	cursor: pointer;
+}
+#dispOnComplete{
+	text-align: center;
+}
+#dispOnComplete .toggle-storage{
+	color:#3498DB;
+}
+textarea{
+	margin: 1em 0 0 0;
+}
+
+#auditReport{
+	margin-top: 2em;
+	text-align: center;
+	-webkit-border-radius:6px;
+	-webkit-border-radius:6px;
+}
+
+.comment {
+	color: #808C94;
+}
