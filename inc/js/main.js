@@ -61,11 +61,16 @@ function Reddit($scope, $http) {
 	var postData = {'url' : 'http://www.reddit.com/r/wallpapers.json'};
 
 	$http({method: 'POST', url: 'inc/php/cross.php', data: postData}).
-	success(function(data, status, headers, config) {
+	success(function(data) {
+
 		console.log('success', data);
 		$scope.wallpapers = data.data.children;
+
+
 	}).
-	error(function(data, status, headers, config) {
+	error(function(data) {
+
 		console.log('error', data);
+
 	});
 };

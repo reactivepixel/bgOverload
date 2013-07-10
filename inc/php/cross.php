@@ -1,24 +1,24 @@
 <?php
 /**
-  crossDomain
- 
-  cURL's out to a supplied URL while passing the $_REQUEST global onto the 
-  endpoint allowing all supplied data to submit properly.
-
-  This is a simple utility script that could be improved upon, don't be 
-  afraid to do so.
-
-  @author Chris Chapman - twitter - @_chapman
-  @param  (str)$url A valid URL should be provided
-  @return (ary) or (false)
- */
+*  crossDomain
+* 
+*  cURL's out to a supplied URL while passing the $_REQUEST global onto the 
+*  endpoint allowing all supplied data to submit properly.
+*
+*   This is a simple utility script that could be improved upon, don't be 
+*  afraid to do so.
+*
+*  @author Chris Chapman - twitter - @_chapman
+*  @param  (str)$url A valid URL should be provided
+*  @return (ary) or (false)
+*/
 
 function crossDomain($url = ''){
+	// Reg Express for URLS
 	$urlPattern = "~^(https?|ftp)://www\.([a-z\d.-]+(:[a-z\d.&%$-]+)*@)*((25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]\d|[1-9])\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]\d|[1-9]|0)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]\d|[1-9]|0)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]\d|\d)|([a-z\d-]+\.)+(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-z]{2}))(:\d+)*(/($|[\w.,?'\\+&%$#=\~-]+))*$~i";
 	$validURL = preg_match($urlPattern, $url);
 	if(!$validURL) return false;
 	$data 			= $_REQUEST;
-	//$data_string	= json_encode($data);
 
 	// instance a new cURL
 	$ch = curl_init();

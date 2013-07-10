@@ -1,28 +1,38 @@
 <!doctype html>
 <html ng-app="wallpaper">
 	<head>
+		<title>BG Overload</title>
+		
 		<!--  Make the page mobile friendly  -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- CSS Libs -->
 		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-		<link href="inc/css/lib/flat-ui.css" rel="stylesheet">
 
 		<!-- Site's CSS -->
 		<link href="inc/css/site.css" rel="stylesheet">
 
+		<!-- Angular JS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	</head>
-	<body ng-controller="Reddit">
+	<body>
 		
 		<div class="container-fluid">
-			<!-- Content! -->
-				
-			<ul>
-				<li ng-repeat="img in wallpapers"><img width="52" src="{{img.data.thumbnail}}" /></li>
+			
+			<div class="hero-unit">
+				<h1>BG Overload</h1>
+				<p>Fresher than your grandma's wallpaper.</p>
+			</div>
+
+			<ul class="thumbnails" ng-controller="Reddit">
+				<li class="span4" ng-repeat="img in wallpapers">
+					<a href="{{img.data.url}}" class="thumbnail">
+						<img src="{{img.data.url}}" alt="" />
+					</a>
+				</li>
 			</ul>
 
-		</div>
+		</div> <!-- // container-fluid -->
 
 		<script src="inc/js/main.js"></script>
 	</body>
